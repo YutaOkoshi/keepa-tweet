@@ -10,6 +10,10 @@
   - https://developer.twitter.com/en/portal/dashboard
 - Create a GCP service account with editing permissions and download secure.json
   - https://console.cloud.google.com/iam-admin/serviceaccounts
+- spread sheet should be created as follows
+  - ![スクリーンショット 2021-05-20 3 15 30](https://user-images.githubusercontent.com/37532269/118864006-7fd6bd80-b91a-11eb-8494-1c99ee6da168.png)
+  - ![スクリーンショット 2021-05-20 3 16 45](https://user-images.githubusercontent.com/37532269/118864013-836a4480-b91a-11eb-9807-f5a27d2cd3ec.png)
+ 
 
 ## initial setup
 ```
@@ -38,7 +42,7 @@ $ source venv/bin/activate
 ```
 
 
-## gcloud deploy for local
+## gcloud deploy from local
 
 ```
 $ gcloud -v
