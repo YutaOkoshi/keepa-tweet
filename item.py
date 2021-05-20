@@ -4,7 +4,7 @@ import main
 import datetime
 import re
 from time import mktime
-
+import env
 
 class Item:
 
@@ -15,7 +15,7 @@ class Item:
         self.published = datetime.datetime.fromtimestamp(
             mktime(item["published_parsed"]))
         self.affUrl = "https://www.amazon.co.jp/dp/" + \
-            self.asin+"/ref=nosim?tag=" + main.AFF_TAG
+            self.asin+"/ref=nosim?tag=" + env.AFF_TAG
 
         # 文字数制限280文字なのでそれを超えないように大体100文字にtitleを丸める
         self.title = item["title"][0:100]

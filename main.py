@@ -2,24 +2,13 @@
 import feedparser
 import gspread
 import os
-from dotenv import load_dotenv
 from oauth2client.service_account import ServiceAccountCredentials
 import tweepy
 import item
+import env
 
-load_dotenv()
-
-#------------ アフェリエイトURL用のタグ
-AFF_TAG = os.environ['AFF_TAG']
-
-#------------ twitter周り
-API_KEY = os.environ['API_KEY']
-API_SECRET_KEY = os.environ['API_SECRET_KEY']
-ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
-ACCESS_SECRET_TOKEN = os.environ['ACCESS_SECRET_TOKEN']
-
-Auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
-Auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET_TOKEN)
+Auth = tweepy.OAuthHandler(env.API_KEY, env.API_SECRET_KEY)
+Auth.set_access_token(env.ACCESS_TOKEN, env.ACCESS_SECRET_TOKEN)
 TweetApi = tweepy.API(Auth)
 
 
