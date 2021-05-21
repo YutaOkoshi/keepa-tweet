@@ -45,6 +45,11 @@ class Item:
     def shouldTweet(self) -> bool:
         if not self.isTweet:
             return False
+        # １日以上過去の更新はツイートしない
+        lastday = datetime.now(
+            timezone(timedelta(hours=+9), 'JST')) + timedelta(days=-1)
+        if self.published < lastday:
+            return False
         if self.lastUpdate == None \
                 or self.lastUpdate < self.published:
             return True
